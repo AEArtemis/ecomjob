@@ -88,7 +88,7 @@
                                         <span class="block text-blue-400 font-normal">Browse files</span>
                                         
                                         </div>
-                                    </div> <input type="file" class="h-full w-full opacity-0" name="">
+                                    </div> <input type="file" class="h-full w-full opacity-0" name="permit">
                                 </div>
                                 <div class="flex justify-between items-center text-gray-400">
                                 <span>Accepted file type:.doc, jpg, jpeg, png</span>
