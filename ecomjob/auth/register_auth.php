@@ -56,6 +56,7 @@
         $contact = trim(mysqli_real_escape_string($connection, $_POST['contact']));
         $email = trim(mysqli_real_escape_string($connection, $_POST['email']));
         $business_name = trim(mysqli_real_escape_string($connection, $_POST['business_name']));
+        $permit = trim(mysqli_real_escape_string($connection, $_POST['permit']));
         $address = trim(mysqli_real_escape_string($connection, $_POST['address']));
         $password = trim(mysqli_real_escape_string($connection, $_POST['password']));
 
@@ -70,7 +71,7 @@
         // Check Email End
     }
 
-        $register = "INSERT INTO users (full_name, contact, email,  business_name, address, type, password) VALUES ('$full_name', '$contact', '$email', '$business_name',  '$address', 3,'$password')";
+        $register = "INSERT INTO users (full_name, contact, email, business_name, permit, address, type, password) VALUES ('$full_name', '$contact', '$email', '$business_name', '$permit',  '$address', 3,'$password')";
         if (mysqli_query($connection, $register)) {
             $to_login = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
             $login = mysqli_query($connection, $to_login);
