@@ -1,17 +1,3 @@
-<?php
-session_start();
-include "../ecomjob/includes/connection.php";
-$get_data['session_contact'] =$_SESSION['session_contact'];
-$get_data['session_full_name'] =$_SESSION['session_full_name'];
-$get_data['session_id'] =$_SESSION['session_id'];
-$get_data['session_address'] =$_SESSION['session_address'];
-$get_data['session_email'] =$_SESSION['session_email'];
-
-    if (!isset($_SESSION['session_id'])){
-        echo '<script>window.alert("PLEASE LOGIN FIRST!!")</script>';
-        echo '<script>window.location.replace("login.php");</script>';
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -83,7 +69,7 @@ $get_data['session_email'] =$_SESSION['session_email'];
             <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-white z-20" id="nav-content">
                 <ul class="list-reset lg:flex flex-1 items-center px-4 md:px-0">
                     <li class="mr-6 my-2 md:my-0">
-                        <a href="main.html" class="block py-1 md:py-3 pl-1 align-middle text-green-300 no-underline hover:text-green-500 border-b-2 border-white border-green-300">
+                        <a href="main.php" class="block py-1 md:py-3 pl-1 align-middle text-green-300 no-underline hover:text-green-500 border-b-2 border-white border-green-300">
                             <i class="fas fa-home fa-fw mr-3 text-green-300 hover:text-green-500"></i><span class="pb-1 md:pb-0 text-sm">Home</span>
                         </a>
                     </li>
@@ -102,12 +88,12 @@ $get_data['session_email'] =$_SESSION['session_email'];
                 <!-- Profile Card -->
                 <div class="border-t-4 border-green-400 bg-white p-3">
                 <div class="image overflow-hidden">
-                    <img class="w-[27rem] h-[26rem]" src="https://scontent.flgp1-1.fna.fbcdn.net/v/t39.30808-6/271919246_4959474254071230_101675513135552467_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFuhVFDmpiSE6r2NoFimjbi0vlXcy3U9G_S-VdzLdT0b5ZOC7WgJ87pt0jpY1u0FOHqPc8kXOKvxdCKMez-c4ne&_nc_ohc=VPZh1vxTtpsAX9K1xmF&_nc_ht=scontent.flgp1-1.fna&oh=00_AT_EVFuj6heMiwzn6YK8Pe2stU0Jc-pggSHh7snPfEbIgQ&oe=62BC5ABB" alt="profile" />
+                    <img class="w-[27rem] h-[26rem]" src="img/ace.jpg" alt="profile" />
                     <!-- <img class="mx-auto h-auto w-full" src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg" alt="" /> -->
                 </div>
-                <h1 class="my-1 text-xl font-bold leading-8 text-gray-900"><?php echo $get_data['session_full_name']?></h1>
-                <h3 class="font-lg text-semibold leading-6 text-gray-600">Ace Tech Dev Inc.</h3>
-                <p class="text-sm leading-6 text-gray-500 hover:text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non deserunt</p>
+                <h1 class="my-1 text-xl font-bold leading-8 text-gray-900"><?php echo "User In Login"?></h1>
+                <h3 class="font-lg text-semibold leading-6 text-gray-600"><?php echo "Field Interest"?></h3>
+                <p class="text-sm leading-6 text-gray-500 hover:text-gray-600"><?php echo "Description"?></p>
                 <ul class="mt-3 divide-y rounded bg-gray-100 py-2 px-3 text-gray-600 shadow-sm hover:text-gray-700 hover:shadow">
                     <li class="flex items-center py-3">
                     <span>Status</span>
@@ -141,23 +127,38 @@ $get_data['session_email'] =$_SESSION['session_email'];
                     <div class="grid text-sm md:grid-cols-2">
                     <div class="grid grid-cols-2">
                         <div class="px-4 py-2 font-semibold">First Name</div>
-                        <p class="border border-gray-300 p-2"><?php echo $get_data['session_full_name']?></p>
+                        <p type="text" class="border border-gray-300 p-2"><?php  ?></p>
+                    </div>
+                    <div class="grid grid-cols-2">
+                        <div class="px-4 py-2 font-semibold">Last Name</div>
+                        <p type="text" class="border border-gray-300 p-2"><?php ?></p>
+                    </div>
+                    <div class="grid grid-cols-2">
+                        <div class="px-4 py-2 font-semibold">Gender</div>
+                        <p type="text" class="border border-gray-300 p-2"><?php ?></p>
                     </div>
                     <div class="grid grid-cols-2">
                         <div class="px-4 py-2 font-semibold">Contact No.</div>
-                        <p type="text" class="border border-gray-300 p-2" ><?php echo $get_data['session_contact']?></p>
+                        <p type="text" class="border border-gray-300 p-2" ><?php ?></p>
                     </div>
                     <div class="grid grid-cols-2">
                         <div class="px-4 py-2 font-semibold">Current Address</div>
-                        <p type="text" class="border border-gray-300 p-2"><?php echo $get_data['session_address']?></p>
+                        <p type="text" class="border border-gray-300 p-2"><?php ?></p>
+                    </div>
+                    <div class="grid grid-cols-2">
+                        <div class="px-4 py-2 font-semibold">Permanant Address</div>
+                        <p type="text" class="border border-gray-300 p-2"><?php ?></p>
                     </div>
                     <div class="grid grid-cols-2">
                         <div class="px-4 py-2 font-semibold">Email.</div>
-                        <p type="text" class="border border-gray-300 p-2"><?php echo $get_data['session_email']?></p>
+                        <p type="text" class="border border-gray-300 p-2"><?php ?></p>
+                    </div>
+                    <div class="grid grid-cols-2">
+                        <div class="px-4 py-2 font-semibold">Birthday</div>
+                        <p type="text" class="border border-gray-300 p-2"><?php ?></p>
                     </div>
                     </div>
                 </div>
-                <button class="focus:shadow-outline hover:shadow-xs my-4 block w-full rounded-lg p-3 text-sm font-semibold text-blue-800 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none">Update Information</button>
                 </div>
                 <!-- End of about section -->
         
@@ -175,6 +176,7 @@ $get_data['session_email'] =$_SESSION['session_email'];
                         </span>
                         <span class="tracking-wide">Experience</span>
                     </div>
+            <!-- <?php ?> -->
                     <ul class="list-inside space-y-2">
                         <li>
                         <div class="text-teal-600">Owner at Her Company Inc.</div>
@@ -207,8 +209,8 @@ $get_data['session_email'] =$_SESSION['session_email'];
                     </div>
                     <ul class="list-inside space-y-2">
                         <li>
-                        <div class="text-teal-600">Masters Degree in Oxford</div>
-                        <div class="text-xs text-gray-500">March 2020 - Now</div>
+                            <div class="text-teal-600">Masters Degree in Oxford</div>
+                            <div class="text-xs text-gray-500">March 2020 - Now</div>
                         </li>
                         <li>
                         <div class="text-teal-600">Bachelors Degreen in LPU</div>
